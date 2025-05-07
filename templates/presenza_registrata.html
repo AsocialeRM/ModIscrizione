@@ -1,0 +1,25 @@
+<!-- templates/presenza_registrata.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Presenza Registrata</title>
+</head>
+<body>
+<h1>Presenza</h1>
+
+{% if registrata %}
+<p>✅ Presenza registrata con successo per oggi!</p>
+{% else %}
+<p>ℹ️ Presenza già registrata oggi.</p>
+{% endif %}
+
+<ul>
+    <li>Nome: {{ iscritto[1] }}</li>
+    <li>Cognome: {{ iscritto[2] }}</li>
+    <li>Email: {{ iscritto[8] }}</li>
+    <li>Telefono: {{ iscritto[7] }}</li>
+</ul>
+
+<a href="/">Torna alla Home</a>
+</body>
+</html>

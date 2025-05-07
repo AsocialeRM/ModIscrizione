@@ -1,0 +1,8 @@
+QR Code (già generato)
+
+Quando hai creato il QR durante l’iscrizione, lui contiene solo l’ID.
+Per essere sicuro, quando generi QR puoi usare (Python):
+
+qr = qrcode.make(f'http://127.0.0.1:5000/presenza/{iscritto_id}')
+
+⚠️ Se pubblichi online, sostituisci 127.0.0.1 con il tuo dominio o IP pubblico.

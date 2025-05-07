@@ -1,0 +1,24 @@
+<!-- templates/presenze_oggi.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Presenze di Oggi</title>
+</head>
+<body>
+<h1>Presenze di Oggi</h1>
+
+<table border="1">
+<tr><th>Nome</th><th>Cognome</th><th>Email</th><th>Ora Registrazione</th></tr>
+{% for p in presenze %}
+<tr>
+<td>{{ p[0] }}</td>
+<td>{{ p[1] }}</td>
+<td>{{ p[2] }}</td>
+<td>{{ p[3] }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/">Torna alla Home</a>
+</body>
+</html>

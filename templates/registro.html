@@ -1,0 +1,45 @@
+<!-- templates/registro.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <title>Registro Iscritti</title>
+</head>
+<body>
+<h1>Registro Iscritti</h1>
+<form method="post" action="/aggiorna_registro">
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Email</th>
+        <th>Telefono</th>
+        <th>Attivo</th>
+        <th>2023</th>
+        <th>2024</th>
+        <th>2025</th>
+    </tr>
+    {% for iscritto in iscritti %}
+    <tr>
+        <td>{{ iscritto[1] }}</td>
+        <td>{{ iscritto[2] }}</td>
+        <td>{{ iscritto[8] }}</td>
+        <td>{{ iscritto[7] }}</td>
+        <td>
+            <input type="checkbox" name="attivo_{{ iscritto[0] }}" {% if iscritto[11] == 1 %}checked{% endif %}>
+        </td>
+        <td>
+            <input type="checkbox" name="anno_2023_{{ iscritto[0] }}" {% if iscritto[12] == 1 %}checked{% endif %}>
+        </td>
+        <td>
+            <input type="checkbox" name="anno_2024_{{ iscritto[0] }}" {% if iscritto[13] == 1 %}checked{% endif %}>
+        </td>
+        <td>
+            <input type="checkbox" name="anno_2025_{{ iscritto[0] }}" {% if iscritto[14] == 1 %}checked{% endif %}>
+        </td>
+    </tr>
+    {% endfor %}
+</table><br>
+<button type="submit">Salva Modifiche</button>
+</form>
+</body>
+</html>
