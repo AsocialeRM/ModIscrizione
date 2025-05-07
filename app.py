@@ -49,7 +49,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-def init_db()
+def init_db():
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
     # Tabella iscritti aggiornata
@@ -83,11 +83,11 @@ def init_db()
     conn.close()
 
 @app.route('')
-def ASOCIALE()
+def ASOCIALE():
     return render_template('ASOCIALE.html')
 
 @app.route('verifica', methods=['POST'])
-def verifica()
+def verifica():
     contatto = request.form['contatto']
     conn = sqlite3.connect('database.db')
     c = conn.cursor()
@@ -105,7 +105,7 @@ def verifica()
         return render_template('iscrizione.html')
 
 @app.route('nuova_iscrizione', methods=['POST'])
-def nuova_iscrizione()
+def nuova_iscrizione():
     nome = request.form['nome']
     cognome = request.form['cognome']
     luogo_nascita = request.form['luogo_nascita']
@@ -146,7 +146,7 @@ def nuova_iscrizione()
     return render_template('success.html', pdf_path=pdf_path)
 
 @app.route('downloadpathfilename')
-def download(filename)
+def download(filename):
     return send_file(filename, as_attachment=True)
 
 if __name__ == '__main__'
